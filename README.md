@@ -1,64 +1,83 @@
+
 # Sistema de Gestión de Inventario
 
-Este proyecto es un sistema de gestión de inventario diseñado para registrar productos, categorías, proveedores y bodegas, y gestionar el stock de los productos de manera eficiente.
+Este proyecto es un sistema de gestión de inventario desarrollado en Python. El sistema permite la administración eficiente de productos, categorías, proveedores y bodegas, facilitando la gestión de stock y la generación de informes detallados.
 
-## Características
+## Descripción General
+
+El sistema está diseñado para empresas que necesitan controlar su inventario de manera precisa. Permite registrar y gestionar productos, organizar productos en categorías, asociar productos con proveedores y manejar la distribución y almacenamiento en bodegas. Además, incluye funciones para calcular el valor total del stock disponible y generar reportes informativos.
+
+## Características Principales
 
 ### Registro de Entidades
 
-- **Producto**: 
-  - Atributos: nombre, descripción, precio, stock, categoría.
-  - Métodos: agregarStock, retirarStock, calcularValorTotal, consultarDisponibilidad.
-
-- **Categoría**: 
-  - Atributos: nombre, descripción.
-  - Métodos: agregarProducto, eliminarProducto, consultarProductos.
-
-- **Proveedor**: 
-  - Atributos: nombre, dirección, teléfono, lista de productos.
-  - Métodos: agregarProducto, eliminarProducto, consultarProductos.
-
-- **Bodega**: 
-  - Atributos: nombre, ubicación, capacidad máxima, lista de productos.
-  - Métodos: agregarProducto, retirarProducto, consultarStock.
+- **Productos**: Permite registrar productos con nombre, descripción, precio, stock inicial y categoría.
+- **Categorías**: Permite organizar productos en categorías con un nombre y una descripción.
+- **Proveedores**: Gestiona proveedores con información de contacto y la lista de productos que suministran.
+- **Bodegas**: Maneja bodegas con nombre, ubicación, capacidad máxima y lista de productos almacenados.
 
 ### Gestión de Stock
 
-- Agregar o retirar stock de un producto.
-- Calcular el valor total del inventario.
-- Consultar la disponibilidad de un producto en una bodega específica.
-
-### Relaciones entre Entidades
-
-- Asociar productos con categorías, proveedores y bodegas.
-- Administrar la lista de productos en cada entidad, incluyendo la verificación de capacidad y stock.
+- **Agregar Stock**: Permite incrementar el stock de productos existentes.
+- **Retirar Stock**: Permite disminuir el stock de productos disponibles.
+- **Cálculo del Valor Total del Stock**: Calcula el valor total del inventario basado en el precio y la cantidad disponible de cada producto.
+- **Consulta de Disponibilidad**: Verifica la disponibilidad de productos en una bodega específica.
 
 ### Consultas y Reportes
 
-- Consultar información detallada de productos, categorías, proveedores y bodegas.
-- Generar informes de stock por categoría, proveedor y bodega.
+- **Consulta de Productos**: Permite consultar detalles de los productos, incluyendo su categoría y proveedor.
+- **Consulta de Categorías**: Muestra la lista de productos asociados a una categoría específica.
+- **Consulta de Proveedores**: Proporciona información sobre los productos suministrados por cada proveedor.
+- **Consulta de Bodegas**: Permite revisar los productos almacenados en una bodega y su capacidad.
+- **Generación de Reportes de Stock**: Ofrece reportes de stock por categoría, proveedor y bodega.
 
-## Estructura del Proyecto
+## Requisitos del Sistema
 
-inventario/
+- Python 3.8 o superior
+- Flask (opcional, si se implementa una API REST)
 
--.idea/ # Archivos de configuración del proyecto en PyCharm
+## Instalación
 
--.venv/ # Entorno virtual de Python
+Para instalar y configurar el proyecto en su entorno local, siga los siguientes pasos:
 
--src/ # Código fuente del proyecto
+1. **Clonar el repositorio**:
 
---modelos/ # Módulos que definen las clases del modelo de datos
+   ```bash
+   git clone https://github.com/tu_usuario/gestion-inventario.git
+   cd gestion-inventario
+## Crear y activar un entorno virtual (opcional pero recomendado):
 
----producto.py # Definición de la clase Producto
+En Windows:
+```bash
+- python -m venv .venv
+- .venv\Scripts\activate.
 
----categoria.py # Definición de la clase Categoría
+## Instalar las dependencias del proyecto:
 
----proveedor.py # Definición de la clase Proveedor
+- pip install -r requirements.txt
+  pip install flask
+  pip freeze > requirements.txtç
+  ````
 
----bodega.py # Definición de la clase Bodega
+  ## Ejecución del Proyecto
+Para ejecutar la aplicación, sigue estos pasos:
 
----main.py # Punto de entrada del programa
+```bash
+cd src
+```
+Ejecuta el script principal main.py:
+```bash
+python main.py
+```
+Este comando iniciará la aplicación, permitiéndote gestionar el inventario ya sea a través de la línea de comandos o de una API REST si se ha implementado.
 
- -README.md # Este archivo
+##
+## Uso del proyecto
 
+La aplicación permite interactuar con el sistema a través de una interfaz de línea de comandos o una API REST. Puedes realizar acciones como:
+
+Registrar nuevos productos, categorías, proveedores y bodegas.
+Actualizar y consultar el stock de productos.
+Generar y revisar reportes detallados sobre el estado del inventario.
+## Licencia
+MIT
