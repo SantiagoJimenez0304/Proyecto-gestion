@@ -56,7 +56,7 @@ En Windows:
 
 - pip install -r requirements.txt
   pip install flask
-  pip freeze > requirements.txtç
+  pip freeze > requirements.txt
   ````
 
   ## Ejecución del Proyecto
